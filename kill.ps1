@@ -1,0 +1,1 @@
+taskkill.exe /F /PID $(Get-WmiObject Win32_Process -Filter "name = 'python3.9.exe'" | Where-Object {$_.CommandLine -like '*init.py'} | Select -ExpandProperty ProcessId)
